@@ -18,6 +18,7 @@ namespace LucasClassManagementApi.Migrations.TeacherDataBase
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TeacherNumber = table.Column<int>(type: "int", nullable: false),
                     PhoneNumber = table.Column<long>(type: "bigint", nullable: false)
                 },

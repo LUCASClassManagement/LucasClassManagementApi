@@ -139,3 +139,4 @@ C:\Users\thiem\LUCAS_CLASS_MANAGEMENT\Backend\LucasClassManagementApi\obj\Debug\
 C:\Users\thiem\LUCAS_CLASS_MANAGEMENT\Backend\LucasClassManagementApi\obj\Debug\net8.0\LucasClassManagementApi.pdb
 C:\Users\thiem\LUCAS_CLASS_MANAGEMENT\Backend\LucasClassManagementApi\obj\Debug\net8.0\LucasClassManagementApi.genruntimeconfig.cache
 C:\Users\thiem\LUCAS_CLASS_MANAGEMENT\Backend\LucasClassManagementApi\obj\Debug\net8.0\ref\LucasClassManagementApi.dll
+C:\Users\thiem\LUCAS_CLASS_MANAGEMENT\Backend\LucasClassManagementApi\obj\Debug\net8.0\LucasClassManagementApi.sourcelink.json

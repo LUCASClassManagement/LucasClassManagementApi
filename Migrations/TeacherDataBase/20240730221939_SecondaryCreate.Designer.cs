@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LucasClassManagementApi.Migrations.TeacherDataBase
 {
     [DbContext(typeof(TeacherDataBaseContext))]
-    [Migration("20240730132410_SecondaryCreate")]
+    [Migration("20240730221939_SecondaryCreate")]
     partial class SecondaryCreate
     {
         /// <inheritdoc />
@@ -36,6 +36,9 @@ namespace LucasClassManagementApi.Migrations.TeacherDataBase
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("PhoneNumber")
