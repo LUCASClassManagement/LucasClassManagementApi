@@ -2,16 +2,16 @@
 
 #nullable disable
 
-namespace LucasClassManagementApi.Migrations
+namespace LucasClassManagementApi.Migrations.TeacherDataBase
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class TeacherMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Students",
+                name: "Teachers",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -19,12 +19,13 @@ namespace LucasClassManagementApi.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StudentNumber = table.Column<int>(type: "int", nullable: false),
+                    Role = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TeacherNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumber = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Students", x => x.Id);
+                    table.PrimaryKey("PK_Teachers", x => x.Id);
                 });
         }
 
@@ -32,7 +33,7 @@ namespace LucasClassManagementApi.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Students");
+                name: "Teachers");
         }
     }
 }

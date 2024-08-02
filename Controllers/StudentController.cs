@@ -46,7 +46,7 @@ public class StudentController : ControllerBase {
 
     //Requete pour créer un nouveau utilisateur (student), nous allons aussi mettre la policy à admin
     [HttpPost]
-    //[Authorize(Policy = "Admin")]
+    [Authorize(Policy = "Admin")]
     public IActionResult Add([FromBody] Student student) {
         if(student == null) {
             return BadRequest("data can't be null");
@@ -78,6 +78,8 @@ public class StudentController : ControllerBase {
         }
 
         student.Password = HashPassword(updateStudent.Password);
+        student.FirstName = updateStudent.FirstName;
+        student.Name = updateStudent.Name;
         student.PhoneNumber = updateStudent.PhoneNumber;
 
         _studentContext.Students.Update(student);
@@ -89,7 +91,7 @@ public class StudentController : ControllerBase {
     //Requete pour supprimer un utilisateur (student), la policy reviendra à l'admin
 
     [HttpDelete("{id}")]
-    //[Authorize(Policy = "Admin")]
+    [Authorize(Policy = "Admin")]
     public IActionResult Delete(int id) {
         var student = _studentContext.Students.Find(id);
 

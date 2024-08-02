@@ -46,7 +46,7 @@ public class TeacherController : ControllerBase {
 
     //Requete pour créer un nouveau utilisateur (teacher), nous allons aussi mettre la policy à admin
     [HttpPost]
-    //[Authorize(Policy = "Admin")]
+    [Authorize(Policy = "Admin")]
     public IActionResult Add([FromBody] Teacher teacher) {
         if(teacher == null) {
             return BadRequest("data can't be null");
@@ -65,6 +65,7 @@ public class TeacherController : ControllerBase {
     }
 
     //Requete pour modifier un utilisateur (teacher), nous n'allons pas mettre de policy pour permettre aux utilisateurs de modifier eux memes certaines informations
+    [HttpPut("{id}")]
     public IActionResult Update([FromBody] Teacher updateTeacher, int id) {
         var teacher = _teacherContext.Teachers.Find(id);
 
@@ -88,6 +89,8 @@ public class TeacherController : ControllerBase {
     }
 
     //Requete pour supprimer un utilisateur (teacher), la policy reviendra à l'admin
+    [HttpDelete("{id}")]
+    [Authorize(Policy = "Admin")]
     public IActionResult Delete(int id) {
         var teacher = _teacherContext.Teachers.Find(id);
 

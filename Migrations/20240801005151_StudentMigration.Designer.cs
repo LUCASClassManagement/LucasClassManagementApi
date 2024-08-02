@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace LucasClassManagementApi.Migrations.TeacherDataBase
+namespace LucasClassManagementApi.Migrations
 {
-    [DbContext(typeof(TeacherDataBaseContext))]
-    [Migration("20240730221939_SecondaryCreate")]
-    partial class SecondaryCreate
+    [DbContext(typeof(StudentDataBaseContext))]
+    [Migration("20240801005151_StudentMigration")]
+    partial class StudentMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace LucasClassManagementApi.Migrations.TeacherDataBase
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("LucasClassManagementApi.Models.Teacher", b =>
+            modelBuilder.Entity("LucasClassManagementApi.Models.Student", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -44,12 +44,15 @@ namespace LucasClassManagementApi.Migrations.TeacherDataBase
                     b.Property<long>("PhoneNumber")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("TeacherNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StudentNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Teachers");
+                    b.ToTable("Students");
                 });
 #pragma warning restore 612, 618
         }

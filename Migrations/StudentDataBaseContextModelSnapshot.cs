@@ -41,8 +41,11 @@ namespace LucasClassManagementApi.Migrations
                     b.Property<long>("PhoneNumber")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("StudentNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StudentNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
