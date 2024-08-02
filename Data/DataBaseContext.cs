@@ -35,3 +35,8 @@ public class TeacherDataBaseContext : DbContext {
     public TeacherDataBaseContext(DbContextOptions<TeacherDataBaseContext> options) : base(options) { }
     public DbSet<Teacher> Teachers { get; set; } = null!;
 }
+
+public class ModuleDataBaseContext : DbContext {
+    public ModuleDataBaseContext(DbContextOptions<ModuleDataBaseContext> options) : base(options) { }
+    public DbSet<Module> Modules { get; set; } = null!;
+}

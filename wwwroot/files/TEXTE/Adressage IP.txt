@@ -1,0 +1,9 @@
+1- pour trouver l'adresse réseau, on met toute la partie machine à 0;
+
+2- pour trouver la première adresse utilisable, on mets toute la partie machine à 0 sauf le dernier bit;
+
+3- pour trouver la dernière adresse utilisable, on mets toute la partie machine à 1 sauf le dernier bit;
+
+4- pour trouver l'adresse de diffusion, on mets toute la partie machine à 1;
+
+5- pour trouver le sous réseau suivant, on ajoute 1 à l'adresse de diffusion.

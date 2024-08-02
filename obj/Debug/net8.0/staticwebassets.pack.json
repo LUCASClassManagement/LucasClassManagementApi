@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\thiem\\LUCAS_CLASS_MANAGEMENT\\Backend\\LucasClassManagementApi\\wwwroot\\files\\DOCUMENT_WORD\\10.2.1.8 Lab - Create a Partition in Windows.docx",
+      "PackagePath": "staticwebassets\\files\\DOCUMENT_WORD\\10.2.1.8 Lab - Create a Partition in Windows.docx"
+    },
+    {
+      "Id": "C:\\Users\\thiem\\LUCAS_CLASS_MANAGEMENT\\Backend\\LucasClassManagementApi\\wwwroot\\files\\EXCEL\\Nouveau Microsoft Excel Worksheet.xlsx",
+      "PackagePath": "staticwebassets\\files\\EXCEL\\Nouveau Microsoft Excel Worksheet.xlsx"
+    },
+    {
+      "Id": "C:\\Users\\thiem\\LUCAS_CLASS_MANAGEMENT\\Backend\\LucasClassManagementApi\\wwwroot\\files\\PDF\\conception-IHM-CM2.pdf",
+      "PackagePath": "staticwebassets\\files\\PDF\\conception-IHM-CM2.pdf"
+    },
+    {
+      "Id": "C:\\Users\\thiem\\LUCAS_CLASS_MANAGEMENT\\Backend\\LucasClassManagementApi\\wwwroot\\files\\POWER_POINT\\Exposé_Architecture.pptx",
+      "PackagePath": "staticwebassets\\files\\POWER_POINT\\Exposé_Architecture.pptx"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LucasClassManagementApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.LucasClassManagementApi.props",
+      "PackagePath": "build\\LucasClassManagementApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.LucasClassManagementApi.props",
+      "PackagePath": "buildMultiTargeting\\LucasClassManagementApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.LucasClassManagementApi.props",
+      "PackagePath": "buildTransitive\\LucasClassManagementApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

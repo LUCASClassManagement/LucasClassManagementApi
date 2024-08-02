@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using LucasClassManagementApi.Data;
 using LucasClassManagementApi.Services;
+using Microsoft.Extensions.FileProviders;
 
 namespace LucasClassManagementApi
 {
@@ -19,12 +20,18 @@ namespace LucasClassManagementApi
 
             var teacherConnection = builder.Configuration.GetConnectionString("TeacherConnection")
                 ?? throw new ArgumentNullException("TeacherConnection", "TeacherConnection is not configured");
+            
+            var moduleConnection = builder.Configuration.GetConnectionString("ModuleConnection")
+                ?? throw new ArgumentNullException("ModuleConnection", "ModuleConnection is not configured");
 
             builder.Services.AddDbContext<StudentDataBaseContext>(options => 
                     options.UseSqlServer(studentConnection));
 
             builder.Services.AddDbContext<TeacherDataBaseContext>(options =>
                     options.UseSqlServer(teacherConnection));
+
+            builder.Services.AddDbContext<ModuleDataBaseContext>(options => 
+                    options.UseSqlServer(moduleConnection));
 
             //add the service scoped
             builder.Services.AddScoped<AuthService>();
@@ -91,6 +98,24 @@ namespace LucasClassManagementApi
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            var env = app.Environment;
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+
+            var webRootPath = env.WebRootPath ?? path;
+            var filePath = Path.Combine(webRootPath, "files");
+
+            if(!Directory.Exists(filePath)) {
+                Directory.CreateDirectory(filePath);
+            }
+
+            app.UseStaticFiles(new StaticFileOptions {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(builder.Environment.ContentRootPath, "wwwroot", "files")),
+                RequestPath = "/files"
+            });
+
+            app.UseCors("AllowSpecificOrigin");
 
             app.UseHttpsRedirection();
             
