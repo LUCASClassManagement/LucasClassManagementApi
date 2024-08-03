@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace LucasClassManagementApi.Migrations
+namespace LucasClassManagementApi.Migrations.StudentDataBase
 {
     /// <inheritdoc />
     public partial class StudentMigration : Migration

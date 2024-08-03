@@ -2,27 +2,29 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using LucasClassManagementApi.Models;
 
-namespace LucasClassManagementApi.Data;
-
-public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<StudentDataBaseContext>
+namespace LucasClassManagementApi.Data
 {
-    public StudentDataBaseContext CreateDbContext(string[] args)
+    public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<StudentDataBaseContext>
     {
-        IConfigurationRoot configuration = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json")
-            .Build();
+        public StudentDataBaseContext CreateDbContext(string[] args)
+        {
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
 
-        var connectionString = configuration.GetConnectionString("StudentConnection");
+            var connectionString = configuration.GetConnectionString("StudentConnection");
 
-        if(string.IsNullOrEmpty(connectionString)) {
-            throw new InvalidOperationException("Connection string 'StudentConnection' Not found.");
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                throw new InvalidOperationException("Connection string 'StudentConnection' Not found.");
+            }
+
+            var optionsBuilder = new DbContextOptionsBuilder<StudentDataBaseContext>();
+            optionsBuilder.UseSqlServer(connectionString);
+
+            return new StudentDataBaseContext(optionsBuilder.Options);
         }
-
-        var optionsBuilder = new DbContextOptionsBuilder<StudentDataBaseContext>();
-        optionsBuilder.UseSqlServer(connectionString);
-
-        return new StudentDataBaseContext(optionsBuilder.Options);
     }
 }
 

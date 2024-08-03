@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using LucasClassManagementApi.Data;
 using LucasClassManagementApi.Models;
 
@@ -18,8 +19,12 @@ public class NoteController : ControllerBase {
 
     //Requete GetAll
     [HttpGet]
-    public IEnumerable<Note> GetAllNotes() {
-        return _noteContext.Notes.ToList();
+    public IActionResult GetAllNotes(int studentId) {
+        var notes = _noteContext.Notes.ToList();
+
+        if(!notes.Any())  return NotFound();
+
+        return Ok(notes);
     }
 
     //Requete GetById
@@ -27,7 +32,7 @@ public class NoteController : ControllerBase {
     public IActionResult GetById(int id) {
         var note = _noteContext.Notes.Find(id);
 
-        if(note == null)    return BadRequest();
+        if(note == null)    return NotFound();
 
         return Ok(note);
     }
@@ -42,7 +47,7 @@ public class NoteController : ControllerBase {
         _noteContext.Notes.Add(note);
         _noteContext.SaveChanges();
 
-        return CreatedAtAction(nameof(GetById), new{ id = note.Id }, note);
+        return CreatedAtAction(nameof(GetById), new{id = note.Id }, note);
     }
 
     //Requete Put, Policy => Admin
@@ -55,6 +60,7 @@ public class NoteController : ControllerBase {
 
         //itération des modifications
         note.ModuleName = updateNote.ModuleName;
+        note.StudentNumber = updateNote.StudentNumber;
         note.ModuleApreciation = updateNote.ModuleApreciation;
         note.ModuleNote = updateNote.ModuleNote;
 

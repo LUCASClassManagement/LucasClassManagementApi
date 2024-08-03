@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LucasClassManagementApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+684fe48863200678d65782a499fa6875911b4c72")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f54d4a97cb91b5ca1364ed6cc774e5a8f674f287")]
 [assembly: System.Reflection.AssemblyProductAttribute("LucasClassManagementApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LucasClassManagementApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

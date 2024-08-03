@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace LucasClassManagementApi.Migrations.NoteDataBase
+namespace LucasClassManagementApi.Migrations
 {
     /// <inheritdoc />
     public partial class NoteMigration : Migration
@@ -16,6 +16,7 @@ namespace LucasClassManagementApi.Migrations.NoteDataBase
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    StudentNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ModuleName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ModuleApreciation = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ModuleNote = table.Column<float>(type: "real", nullable: false)

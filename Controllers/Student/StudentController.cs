@@ -25,18 +25,9 @@ public class StudentController : ControllerBase {
     //Requete pour prendre un utilisateur par son id (students).
     [HttpGet("{id}")]
     public IActionResult GetById(int id) {
-        var studentId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-        /* Politique pour verifier si l'utilisateur qui fait la requete de cet utilisateur sont égaux,donc en résumé un autre utilisateur ne peut pas formuler la requete pour prendre un autre utilisateur */
-        if(studentId == null || studentId != id.ToString()) {
-            return Forbid();
-        }
-
         var student = _studentContext.Students.Find(id);
 
-        if(student == null) {
-            return NotFound();
-        }
+        if(student == null)     return NotFound();
 
         return Ok(student);
     }
