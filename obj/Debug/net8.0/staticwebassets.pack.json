@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\files\\POWER_POINT\\Exposé_Architecture.pptx"
     },
     {
+      "Id": "C:\\Users\\thiem\\LUCAS_CLASS_MANAGEMENT\\Backend\\LucasClassManagementApi\\wwwroot\\files\\TEXTE\\Adressage IP.txt",
+      "PackagePath": "staticwebassets\\files\\TEXTE\\Adressage IP.txt"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LucasClassManagementApi.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

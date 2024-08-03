@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jgseM3A+4CpdeB593oWWr2mZ1r8YmiBZxm8pRk5mAcI=",
+  "Hash": "4AZQBZlAkUF8xRiJrwoW4Nc5vT9EW+HximQQMNrmMQU=",
   "Source": "LucasClassManagementApi",
   "BasePath": "_content/LucasClassManagementApi",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\files\\POWER_POINT\\Exposé_Architecture.pptx"
+    },
+    {
+      "Identity": "C:\\Users\\thiem\\LUCAS_CLASS_MANAGEMENT\\Backend\\LucasClassManagementApi\\wwwroot\\files\\TEXTE\\Adressage IP.txt",
+      "SourceId": "LucasClassManagementApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thiem\\LUCAS_CLASS_MANAGEMENT\\Backend\\LucasClassManagementApi\\wwwroot\\",
+      "BasePath": "_content/LucasClassManagementApi",
+      "RelativePath": "files/TEXTE/Adressage IP.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\TEXTE\\Adressage IP.txt"
     }
   ]
 }

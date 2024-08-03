@@ -40,3 +40,8 @@ public class ModuleDataBaseContext : DbContext {
     public ModuleDataBaseContext(DbContextOptions<ModuleDataBaseContext> options) : base(options) { }
     public DbSet<Module> Modules { get; set; } = null!;
 }
+
+public class NoteDataBaseContext : DbContext {
+    public NoteDataBaseContext(DbContextOptions<NoteDataBaseContext> options) : base(options) { }
+    public DbSet<Note> Notes { get; set; } = null!;
+}

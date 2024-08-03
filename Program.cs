@@ -15,6 +15,7 @@ namespace LucasClassManagementApi
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            //Récupération des chaines de connexion
             var studentConnection = builder.Configuration.GetConnectionString("StudentConnection")
                 ?? throw new ArgumentNullException("StudentConnection", "StudentConnection is not configured");
 
@@ -24,6 +25,10 @@ namespace LucasClassManagementApi
             var moduleConnection = builder.Configuration.GetConnectionString("ModuleConnection")
                 ?? throw new ArgumentNullException("ModuleConnection", "ModuleConnection is not configured");
 
+            var noteConnection = builder.Configuration.GetConnectionString("NoteConnection")
+                ?? throw new ArgumentNullException("NoteConnection", "NoteConnection is not configured");
+
+            //Connetion des modeles à la base de donnée à travers les chaines de connexion
             builder.Services.AddDbContext<StudentDataBaseContext>(options => 
                     options.UseSqlServer(studentConnection));
 
@@ -32,6 +37,9 @@ namespace LucasClassManagementApi
 
             builder.Services.AddDbContext<ModuleDataBaseContext>(options => 
                     options.UseSqlServer(moduleConnection));
+
+            builder.Services.AddDbContext<NoteDataBaseContext>(options => 
+                    options.UseSqlServer(noteConnection));
 
             //add the service scoped
             builder.Services.AddScoped<AuthService>();

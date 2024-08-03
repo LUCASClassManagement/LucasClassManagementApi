@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using LucasClassManagementApi.Data;
 using LucasClassManagementApi.Models;
-using System.Security.Claims;
 
 namespace LucasClassManagementApi.Controllers;
 
